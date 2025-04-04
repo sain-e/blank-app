@@ -1,6 +1,13 @@
 import streamlit as st
 
-st.title("🎈 My new app")
-st.write(
-    "Let's start building! For help and inspiration, head over to [docs.streamlit.io](https://docs.streamlit.io/)."
-)
+pages = {
+    "Go to": [
+        st.Page("home.py", title="Home", icon="🏠"),
+        st.Page("bmiTracker.py", title="BMI Tracker", icon="📏"),
+        st.Page("workoutLogger.py", title="Workout Logger", icon="💪"),
+        st.Page("progressTracker.py", title="Progress Tracker", icon="📈"),
+    ],
+}
+
+pg = st.navigation(pages)
+pg.run()
